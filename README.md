@@ -10,17 +10,6 @@ This project is a console-based C++ application that stores course schedules, le
 | `TEST_CASES.md` | Daniya | fill in the test table + complexity notes for the report |
 | `ClassRecord.h`, `Timetable.h`, `Timetable_core.cpp`, `main.cpp` | shared | already finished; **tell the group before changing**, especially function signatures |
 
-One owner per file means you will almost never get merge conflicts on GitHub.
-(These roles come from the proposal's contribution table; swap them if yours differ.)
-
-## Build and run
-```
-g++ -std=c++11 -Wall -Wextra -o timetable *.cpp
-./timetable          (Windows: timetable.exe)
-```
-Dev-C++: create a project and add ALL the `.cpp` files and the `.h` files.
-Use menu option **9** to load demo data, so nobody has to wait for the file code.
-
 ## Rules
 - Times are stored as minutes since midnight (`09:30` -> 570). Opening hours: 08:00-17:00.
 - Room names have no spaces (`CS-Lab-1`), so the CSV stays simple.
