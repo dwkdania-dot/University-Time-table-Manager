@@ -22,7 +22,7 @@ This project is a console-based C++ application that stores course schedules, le
 3. Final: testing, complexity analysis, report, demo.
 
 
-## Why a linked list (for the report)
+## Why a linked list
 - The timetable changes all the time (add, update, delete). In a linked list, adding or removing a class
   only changes pointers; an array would have to shift every later element.
 - Sorted insertion is natural: walk to the right spot and link the new node in.
