@@ -8,7 +8,7 @@ This project is a console-based C++ application that stores course schedules, le
 | `Display.cpp` | Aiman | `displayWeek` and the four searches (`displayDay` is a finished example) |
 | `FileIO.cpp` | Daniya | `saveToFile`, `loadFromFile` (CSV format is documented in the file) |
 | `TEST_CASES.md` | Daniya | fill in the test table + complexity notes for the report |
-| `ClassRecord.h`, `Timetable.h`, `Timetable_core.cpp`, `main.cpp` | shared | already finished; **tell the group before changing**, especially function signatures |
+| `ClassRecord.h`, `Timetable.h`, `Timetable_core.cpp`, `main.cpp` | shared |  |
 
 ## Rules
 - Times are stored as minutes since midnight (`09:30` -> 570). Opening hours: 08:00-17:00.
