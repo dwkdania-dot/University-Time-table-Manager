@@ -2,31 +2,26 @@
 #include <fstream>
 #include "Timetable.h"
 using namespace std;
-
 bool Timetable::saveToFile(const string& filename) const {
     ofstream out(filename.c_str());
     if (!out.is_open()) return false;
 
-    for (int d = 0; d < NUM_DAYS; d++) {
-        Node* cur = days[d];
-        while (cur != NULL) {
-            const ClassRecord& r = cur->data;
-            out << r.courseCode << ','
-                << r.courseName << ','
-                << r.teacher    << ','
-                << r.room       << ','
-                << r.section    << ','
-                << DAY_NAMES[r.day]       << ','
-                << formatTime(r.startMin) << ','
-                << formatTime(r.endMin)   << '\n';
-            cur = cur->next;
-        }
+    Node* cur = head;
+    while (cur != NULL) {
+        const ClassRecord& r = cur->data;
+        out << r.courseCode << ','
+            << r.courseName << ','
+            << r.teacher    << ','
+            << r.room       << ','
+            << r.section    << ','
+            << DAY_NAMES[r.day]       << ','
+            << formatTime(r.startMin) << ','
+            << formatTime(r.endMin)   << '\n';
+        cur = cur->next;
     }
     out.close();
     return true;
 }
-
-
 bool Timetable::loadFromFile(const string& filename) {
     ifstream in(filename.c_str());
     if (!in.is_open()) return false;
@@ -40,7 +35,6 @@ bool Timetable::loadFromFile(const string& filename) {
         lineNo++;
 
         if (line.length() == 0 || line == "\r") continue;  
-
         string f[8];
         int fieldCount = 0;
         string current = "";
@@ -49,11 +43,11 @@ bool Timetable::loadFromFile(const string& filename) {
                 if (fieldCount < 8) f[fieldCount] = current;
                 fieldCount++;
                 current = "";
-            } else if (line[i] != '\r') {    
+            } else if (line[i] != '\r') { 
                 current += line[i];
             }
         }
-        if (fieldCount < 8) f[fieldCount] = current;  
+        if (fieldCount < 8) f[fieldCount] = current; 
         fieldCount++;
 
         if (fieldCount != 8) {
